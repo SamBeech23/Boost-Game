@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2160.8467, g: 2265.0723, b: 3288.4062, a: 1}
+  m_IndirectSpecularColor: {r: 2160.3574, g: 2264.0273, b: 3286.621, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 3339954233139917387, guid: 1a2ae840f85298c478c78c701f263b43,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2ae840f85298c478c78c701f263b43, type: 3}
 --- !u!4 &538305307 stripped
@@ -852,16 +857,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4709597479205240577, guid: 96c3eca79493746408e1afe32f520c0a,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.4915657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4709597479205240577, guid: 96c3eca79493746408e1afe32f520c0a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.7637124
-      objectReference: {fileID: 0}
-    - target: {fileID: 4709597479205240577, guid: 96c3eca79493746408e1afe32f520c0a,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.4624
       objectReference: {fileID: 0}
@@ -1008,11 +1003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891630791552151002, guid: 931dc2e1bb02ee9449aabfabe399a215,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8891630791552151002, guid: 931dc2e1bb02ee9449aabfabe399a215,
         type: 3}
