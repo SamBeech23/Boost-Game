@@ -29,28 +29,16 @@ public class Movement : MonoBehaviour
         ProcessRotation();
     }
 
-
     void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
-
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
-
-            if (!mainBoost.isPlaying)
-            {
-                mainBoost.Play();
-            }
+            StartThrusting();
         }
-        
+
         else
         {
-            mainBoost.Stop();
-            audioSource.Stop();
+            StopThrusting();
         }
     }
 
@@ -58,24 +46,60 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rb.freezeRotation = true; // Freezing rotation to maually rotate
-            transform.Rotate(Vector3.forward * rotateForce * Time.deltaTime);
-            rb.freezeRotation = false; // Unfreeze after movement
-            if (!rightThruster.isPlaying){rightThruster.Play();}
+            RotateLeft();
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.freezeRotation = true; // Freezing rotation to maually rotate
-            transform.Rotate(Vector3.back * rotateForce * Time.deltaTime);
-            rb.freezeRotation = false; // Unfreeze after movement
-            if (!leftThruster.isPlaying){leftThruster.Play();}
+            RotateRight();
         }
 
         else
         {
-            rightThruster.Stop();
-            leftThruster.Stop();
+            StopRotating();
         }
+    }
+
+    private void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+
+        if (!mainBoost.isPlaying)
+        {
+            mainBoost.Play();
+        }
+    }
+
+    private void StopThrusting()
+    {
+        mainBoost.Stop();
+        audioSource.Stop();
+    }
+
+    private void RotateLeft()
+    {
+        rb.freezeRotation = true; // Freezing rotation to maually rotate
+        transform.Rotate(Vector3.forward * rotateForce * Time.deltaTime);
+        rb.freezeRotation = false; // Unfreeze after movement
+        if (!rightThruster.isPlaying) { rightThruster.Play(); }
+    }
+
+    private void RotateRight()
+    {
+        rb.freezeRotation = true; // Freezing rotation to maually rotate
+        transform.Rotate(Vector3.back * rotateForce * Time.deltaTime);
+        rb.freezeRotation = false; // Unfreeze after movement
+        if (!leftThruster.isPlaying) {leftThruster.Play();}
+    }
+
+    private void StopRotating()
+    {
+        rightThruster.Stop();
+        leftThruster.Stop();
     }
 }
