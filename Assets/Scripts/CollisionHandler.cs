@@ -39,7 +39,6 @@ public class CollisionHandler : MonoBehaviour
             {
                 collisionOn = false;
             }
-
             else if (!collisionOn)
             {
                 collisionOn = true;
@@ -54,7 +53,6 @@ public class CollisionHandler : MonoBehaviour
             switch (other.gameObject.tag)
             {
                 case "Friendly":
-                    Debug.Log("Friendly object");
                     break;
 
                 case "Finish":
@@ -99,12 +97,10 @@ public class CollisionHandler : MonoBehaviour
     void LoadNextLevel()
     {
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-
         if (nextScene == SceneManager.sceneCountInBuildSettings)
         {
             nextScene = 0;
         }
-
         SceneManager.LoadScene(nextScene);
     }
 }
